@@ -1,0 +1,12 @@
+.headerContainer {
+  display: flex;
+  background-color: var(--grey-0);
+  justify-content: space-between;
+  padding: 25px;
+
+  button {
+    border: none;
+    background-color: var(--grey-0);
+    cursor: pointer;
+  }
+}

@@ -1,4 +1,6 @@
-import { HomePage } from "./pages/HomePage"
+import { HomePage } from "./pages/index"
+import "./global.scss"
+import "./reset.scss"
 
 function App() {
   return (
