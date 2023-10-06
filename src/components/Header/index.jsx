@@ -9,7 +9,9 @@ export const Header = ({ openModal }) => {
       <div>
         <button onClick={openModal}>
           <MdShoppingCart size={21} style={{ color: "#BDBDBD" }} />
+          <div className={styles.spanContainer}>
           <span>0</span>
+          </div>
         </button>
       </div>
     </header>
