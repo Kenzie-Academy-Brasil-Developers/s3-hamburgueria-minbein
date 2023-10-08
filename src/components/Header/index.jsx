@@ -8,7 +8,7 @@ export const Header = ({ openModal }) => {
       <img src={Logo} alt="Logo Kenzie Burguer" />
       <div>
         <button onClick={openModal}>
-          <MdShoppingCart size={21} style={{ color: "#BDBDBD" }} />
+          <MdShoppingCart size={23} style={{ color: "#BDBDBD" }} />
           <div className={styles.spanContainer}>
           <span>0</span>
           </div>

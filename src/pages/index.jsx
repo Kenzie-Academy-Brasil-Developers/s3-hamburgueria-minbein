@@ -3,7 +3,7 @@ import { Header } from "../components/Header";
 import { ProductList } from "../components/ProductList";
 import { api } from "../services/api";
 import { CartModal } from "../components/CartModal";
-import styles from "./styles.module.scss"
+import styles from "./styles.module.scss";
 
 export const HomePage = () => {
   const [cartList, setCartList] = useState([]);
@@ -35,15 +35,14 @@ export const HomePage = () => {
       <Header openModal={toggleModal} />
       <main className={styles.mainContainer}>
         <ProductList product={product} />
-
-        {modalOpen && (
-          <CartModal
-            cartList={cartList}
-            setCartList={setCartList}
-            onClose={closeModal}
-          />
-        )}
       </main>
+      {modalOpen && (
+        <CartModal
+          cartList={cartList}
+          setCartList={setCartList}
+          onClose={closeModal}
+        />
+      )}
     </>
   );
 };

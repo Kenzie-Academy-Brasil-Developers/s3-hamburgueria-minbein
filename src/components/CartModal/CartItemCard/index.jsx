@@ -1,4 +1,5 @@
 import { MdDelete } from "react-icons/md";
+st
 
 export const CartItemCard = ({ product }) => {
    return (
