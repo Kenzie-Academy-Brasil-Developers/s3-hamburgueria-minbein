@@ -1,11 +1,33 @@
 import { MdClose } from "react-icons/md";
 import { CartItemCard } from "./CartItemCard";
+import { MdRemoveShoppingCart } from "react-icons/md";
 import styles from "./styles.module.scss";
 
-export const CartModal = ({ cartList, onClose }) => {
-  const total = cartList.reduce((prevValue, product) => {
-    return prevValue + product.price;
+export const CartModal = ({ cartList, onClose, removeAll, removeProduct }) => {
+  const total = cartList.reduce((prevValue, cart) => {
+    return prevValue + cart.price;
   }, 0);
+
+  const emptyCartContent = (
+    <div className={styles.empty}>
+      <div className={styles.emptyCart}>
+        <MdRemoveShoppingCart size={50} />
+        <p>Carrinho vazio</p>
+      </div>
+      <div>
+        <div className={styles.total}>
+          <p>Total</p>
+          <span>
+            {total.toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </span>
+        </div>
+        <button onClick={onClose}>Fechar</button>
+      </div>
+    </div>
+  );
 
   return (
     <div className={styles.backdrop}>
@@ -17,19 +39,21 @@ export const CartModal = ({ cartList, onClose }) => {
           </button>
         </div>
         {cartList.length === 0 ? (
-          <div>
-            <p>Carrinho vazio</p>
-          </div>
+          emptyCartContent
         ) : (
           <div>
             <ul>
-              {cartList.map((product) => (
-                <CartItemCard key={product.id} product={product} />
+              {cartList.map((cart) => (
+                <CartItemCard
+                  removeProduct={removeProduct}
+                  key={cart.id}
+                  product={cart}
+                />
               ))}
             </ul>
-            <div>
-              <div>
-                <span>Total</span>
+            <div className={styles.totalContainer}>
+              <div className={styles.total}>
+                <p>Total</p>
                 <span>
                   {total.toLocaleString("pt-BR", {
                     style: "currency",
@@ -37,7 +61,7 @@ export const CartModal = ({ cartList, onClose }) => {
                   })}
                 </span>
               </div>
-              <button>Remover todos</button>
+              <button onClick={removeAll}>Remover todos</button>
             </div>
           </div>
         )}

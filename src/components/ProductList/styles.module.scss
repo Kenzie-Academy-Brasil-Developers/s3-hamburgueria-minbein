@@ -1,7 +1,30 @@
-.listContainer{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    overflow-y: hidden;
+.listContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-y: hidden;
+}
+@media (min-width: 650px) {
+  .listContainer {
+    display: grid;
+    overflow-y: unset;
+    grid-template-columns: 300px 300px;
+    justify-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 1024px) {
+  .listContainer {
+    display: grid;
+    overflow-y: unset;
+    grid-template-columns: 300px 300px 300px;
+  }
+}
+@media (min-width: 1260px) {
+  .listContainer {
+    display: grid;
+    overflow-y: unset;
+    grid-template-columns: 300px 300px 300px 300px;
+  }
 }

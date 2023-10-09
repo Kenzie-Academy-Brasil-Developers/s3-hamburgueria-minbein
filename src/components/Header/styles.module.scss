@@ -12,12 +12,30 @@
     flex-direction: column-reverse;
     align-items: flex-end;
   }
-  div.spanContainer{
+  div.spanContainer {
     background-color: var(--color-primary);
     color: white;
     font-weight: bold;
     padding: 3px;
     border-radius: 8px;
     font-size: 10px;
+  }
+}
+@media (min-width: 650px) {
+  .headerContainer {
+    justify-content: space-around;
+    gap: 410px;
+  }
+}
+@media (min-width: 1024px) {
+  .headerContainer {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 1260px) {
+  .headerContainer {
+    justify-content: center;
+    gap: 1040px;
   }
 }

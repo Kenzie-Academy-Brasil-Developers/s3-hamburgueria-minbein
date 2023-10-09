@@ -1,3 +1,13 @@
-.mainContainer{
-    margin-left: 20px
+.mainContainer {
+  margin-left: 20px;
+}
+@media (min-width: 1024px) {
+  .mainContainer {
+    margin: 0px;
+  }
+}
+@media (min-width: 1366px) {
+  .mainContainer {
+    margin: 0px;
+  }
 }

@@ -2,7 +2,7 @@ import Logo from "../../assets/Logo.svg";
 import styles from "./styles.module.scss"
 import { MdShoppingCart } from "react-icons/md";
 
-export const Header = ({ openModal }) => {
+export const Header = ({ openModal, cartList }) => {
   return (
     <header className={styles.headerContainer}>
       <img src={Logo} alt="Logo Kenzie Burguer" />
@@ -10,7 +10,7 @@ export const Header = ({ openModal }) => {
         <button onClick={openModal}>
           <MdShoppingCart size={23} style={{ color: "#BDBDBD" }} />
           <div className={styles.spanContainer}>
-          <span>0</span>
+          <span>{cartList.length}</span>
           </div>
         </button>
       </div>
