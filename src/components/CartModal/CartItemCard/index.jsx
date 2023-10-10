@@ -3,7 +3,6 @@ import styles from "./styles.module.scss";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 export const CartItemCard = ({ product, removeProduct }) => {
   return (
     <li className={styles.itemList} key={product.id}>
@@ -17,13 +16,11 @@ export const CartItemCard = ({ product, removeProduct }) => {
       <button
         onClick={() => {
           removeProduct(product.id);
-          toast.success(`Você removeu ${product.name} do carrinho.`)
+          toast.success(`Você removeu ${product.name} do carrinho.`);
         }}
       >
-         
         <MdDelete size={21} />
       </button>
-
     </li>
   );
 };
